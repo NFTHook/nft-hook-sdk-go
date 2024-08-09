@@ -37,7 +37,7 @@ type ContractSDK struct {
 	auth   *bind.TransactOpts
 }
 
-func NewContractSDK(rpcURL string, keyfile string, passphrase string) (*ContractSDK, error) {
+func NewContractSDK(rpcURL string, keyfile string, passphrase string, chainId *big.Int) (*ContractSDK, error) {
 	client, err := ethclient.Dial(rpcURL)
 	if err != nil {
 		return nil, err
@@ -54,7 +54,7 @@ func NewContractSDK(rpcURL string, keyfile string, passphrase string) (*Contract
 		return nil, err
 	}
 
-	auth, err := bind.NewKeyStoreTransactorWithChainID(ks, account, big.NewInt(1)) // 更改为你所用的链ID
+	auth, err := bind.NewKeyStoreTransactorWithChainID(ks, account, chainId)
 	if err != nil {
 		return nil, err
 	}

@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"math/big"
 	"nft-hook-sdk-go/util"
 	"os"
 	"testing"
@@ -61,7 +62,7 @@ func TestDeployContract(t *testing.T) {
 		log.Fatalf("Failed to unmarshal JSON: %v", err)
 	}
 
-	sdk, err := contract.NewContractSDK("https://sepolia.infura.io/v3/"+secrets["INFURA_KEY"], "../keystore/UTC--2024-08-07T09-45-30.086279000Z--ed240f3831f6bce7b892cfa53d0d84cd27f2db6d", password)
+	sdk, err := contract.NewContractSDK("https://sepolia.infura.io/v3/"+secrets["INFURA_KEY"], "../keystore/UTC--2024-08-07T09-45-30.086279000Z--ed240f3831f6bce7b892cfa53d0d84cd27f2db6d", password, big.NewInt(1))
 	if err != nil {
 		log.Fatalf("Failed to create SDK: %v", err)
 	}
