@@ -19,9 +19,10 @@ package eth
 
 import (
 	"math/big"
-	"nft-hook-sdk-go/util"
 	"os"
 	"strings"
+
+	"github.com/NFTHook/nft-hook-sdk-go/util"
 
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
