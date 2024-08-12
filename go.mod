@@ -1,4 +1,4 @@
-module nft-hook-sdk-go
+module github.com/NFTHook/nft-hook-sdk-go
 
 go 1.22.3
 
